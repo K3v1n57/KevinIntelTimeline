@@ -1,1 +1,170 @@
-/* Add your CSS here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+
+header {
+  background: linear-gradient(90deg, #0071c5, #004a87);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header img {
+  width: 90px;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+header .underline {
+  width: 60px;
+  height: 4px;
+  background: #00aaff;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+
+.timeline {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 4px;
+}
+
+/* Card Styles */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 240px;
+  max-width: 240px;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: #153b6a;
+  font-weight: 700;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card .details {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.card:hover .details {
+  opacity: 1;
+}
+
+
+.card.highlight {
+  background: #004a87;
+  color: white;
+  justify-content: space-between;
+}
+
+.card.highlight img {
+  opacity: 0.2;
+  margin-top: 1rem;
+}
+
+.card.highlight .details.only {
+  opacity: 1;
+  color: white;
+  font-size: 0.95rem;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+
+.instructions {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width: 600px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-type: none;
+  }
+
+  .card {
+    max-width: 90%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .card .details {
+    opacity: 1; 
+  }
+
+  .card.highlight img {
+    display: none;
+  }
+}
